@@ -244,8 +244,8 @@ Audapter('pcf', pcfFN, 0); %input your updated pcfFN perturbation configuration 
 params = getAudapterDefaultParams(defaultGender); %set the default parameters for the default gender
 params.bPitchShift = 1; %activation flag for phase vocoder, set to 1 because pitch shifting is invovled
 params.dScale = dScale; %set the headphone scaling
-%params.pvocFrameLen = 1024; %increased phase vocoder window lenght to accomplidate low frequencie
-%params.pvocHop = 256; %increased phase vocoder overlap of windows
+params.bBypassFmt = 1; %bypasses the formant tracking
+
 AudapterIO('init', params); %needed to save the data
 % Audapter('reset');
 % Audapter('start');
